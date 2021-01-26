@@ -56,7 +56,9 @@
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/styles/iconfont/iconfont.js"
+            ]
           },
           "configurations": {
             "production": {

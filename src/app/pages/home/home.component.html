@@ -1,3 +1,19 @@
 <div class="home">
-    <blog-articles></blog-articles>
+    <nav class="nav">
+        <ul>
+            <li class="nav-item">
+                <button mat-icon-button color="primary">
+                    <i class="iconfont icon-bubble"></i>
+                </button>
+            </li>
+            <li class="nav-item">
+                <button mat-icon-button color="accent">
+                    <i class="iconfont icon-grid"></i>
+                </button>
+            </li>
+        </ul>
+    </nav>
+    <div class="content-wrapper">
+        <router-outlet></router-outlet>
+    </div>
 </div>
