@@ -3,6 +3,7 @@ import { AfterViewInit, Component } from '@angular/core';
 import { Bubble } from './bubble';
 import { fabric } from 'fabric';
 import { GRADIENTS } from './gradients';
+import { v4 as UUID } from 'uuid';
 
 @Component({
   selector: 'blog-article-bubble',
@@ -30,11 +31,13 @@ export class ArticleBubbleComponent implements AfterViewInit {
   bubbles: Bubble[] = [];
   groups: fabric.Group[] = [];
   distance = 280;
+
   ngAfterViewInit(): void {
     this.canvas = this.initCanvas();
     this.drawBubbles(this.canvas);
     this.animate();
     this.canvas.hoverCursor = 'pointer';
+    this.onItemHovered();
   }
 
   initCanvas(): fabric.Canvas {
@@ -52,6 +55,7 @@ export class ArticleBubbleComponent implements AfterViewInit {
     const height = sideLength;
     const radius = sideLength / 2;
     const gradient = this.getBubbleGradient(radius);
+    const bubbleId = UUID().replace(/-/g, '');
     const circle = new fabric.Circle({
       width,
       height,
@@ -69,13 +73,15 @@ export class ArticleBubbleComponent implements AfterViewInit {
     const group = new fabric.Group([circle, text], {
       left: params.x,
       top: params.y,
-      ...this.globalOptions
+      ...this.globalOptions,
+      data: bubbleId
     });
     const speed = (Math.random() * 4 + 6) / 2000;
     const bubble = new Bubble({
       angle: params.angle,
       group,
-      speed
+      speed,
+      id: bubbleId
     });
     return bubble;
   }
@@ -171,10 +177,10 @@ export class ArticleBubbleComponent implements AfterViewInit {
     requestAnimationFrame(this.animate.bind(this));
   }
 
-  // onItemHovered() {
-  //   this.canvas.on('mouse:up', (event) => {
-  //     event.target
-  //   });
-  // }
+  onItemHovered(): void {
+    this.canvas.on('mouse:over', (event) => {
+      console.log(event);
+    });
+  }
 
 }

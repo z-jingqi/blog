@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { fabric } from 'fabric';
 
 @Component({
   selector: 'blog-home',
@@ -9,20 +8,24 @@ import { fabric } from 'fabric';
 })
 export class HomeComponent implements OnInit {
 
+  currentMode: 'bubble' | 'grid' = 'bubble';
+
   constructor(
     private router: Router
   ) { }
 
   ngOnInit(): void { }
 
-  navByMode(mode: 'list' | 'bubble') {
+  navByMode(mode: 'grid' | 'bubble'): void {
     switch (mode) {
       case 'bubble':
         this.router.navigate(['home', 'article-bubble']);
         break;
-      case 'list':
+      case 'grid':
+        this.router.navigate(['home', 'article-grid']);
         break;
     }
+    this.currentMode = mode;
   }
 
 }

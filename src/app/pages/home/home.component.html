@@ -2,12 +2,14 @@
     <nav class="nav">
         <ul>
             <li class="nav-item">
-                <button mat-icon-button color="primary" (click)="navByMode('bubble')">
+                <button mat-icon-button [color]="currentMode === 'bubble' ? 'accent' : 'primary'"
+                    (click)="navByMode('bubble')">
                     <i class="iconfont icon-bubble"></i>
                 </button>
             </li>
             <li class="nav-item">
-                <button mat-icon-button color="accent" (click)="navByMode('list')">
+                <button mat-icon-button [color]="currentMode === 'grid' ? 'accent' : 'primary'"
+                    (click)="navByMode('grid')">
                     <i class="iconfont icon-grid"></i>
                 </button>
             </li>

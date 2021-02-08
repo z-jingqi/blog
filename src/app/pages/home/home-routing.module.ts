@@ -8,8 +8,17 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'article-bubble'
+      },
+      {
         path: 'article-bubble',
         loadChildren: () => import('./article-bubble/article-bubble.module').then(m => m.ArticleBubbleModule)
+      },
+      {
+        path: 'article-grid',
+        loadChildren: () => import('./article-grid/article-grid.module').then(m => m.ArticleGridModule)
       }
     ]
   }
