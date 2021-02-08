@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { fabric } from 'fabric';
 
 @Component({
@@ -8,9 +9,20 @@ import { fabric } from 'fabric';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  navByMode(mode: 'list' | 'bubble') {
+    switch (mode) {
+      case 'bubble':
+        this.router.navigate(['home', 'article-bubble']);
+        break;
+      case 'list':
+        break;
+    }
   }
 
 }

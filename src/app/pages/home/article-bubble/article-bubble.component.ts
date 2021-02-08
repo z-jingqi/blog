@@ -34,6 +34,7 @@ export class ArticleBubbleComponent implements AfterViewInit {
     this.canvas = this.initCanvas();
     this.drawBubbles(this.canvas);
     this.animate();
+    this.canvas.hoverCursor = 'pointer';
   }
 
   initCanvas(): fabric.Canvas {
@@ -94,7 +95,6 @@ export class ArticleBubbleComponent implements AfterViewInit {
         angle
       });
       const name = `第${i + 1}个`;
-      // const name = "";
       const circle = this.createBubble({ x, y, angle, name });
       result.push(circle);
     }
@@ -170,5 +170,11 @@ export class ArticleBubbleComponent implements AfterViewInit {
     }
     requestAnimationFrame(this.animate.bind(this));
   }
+
+  // onItemHovered() {
+  //   this.canvas.on('mouse:up', (event) => {
+  //     event.target
+  //   });
+  // }
 
 }
