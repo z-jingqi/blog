@@ -1,20 +1,27 @@
 <div class="home">
-    <nav class="nav">
-        <ul>
-            <li class="nav-item">
-                <button mat-icon-button [color]="currentMode === 'bubble' ? 'accent' : 'primary'"
-                    (click)="navByMode('bubble')">
-                    <i class="iconfont icon-bubble"></i>
-                </button>
-            </li>
-            <li class="nav-item">
-                <button mat-icon-button [color]="currentMode === 'grid' ? 'accent' : 'primary'"
-                    (click)="navByMode('grid')">
-                    <i class="iconfont icon-grid"></i>
-                </button>
-            </li>
-        </ul>
-    </nav>
+    <div>
+        <form>
+            <mat-form-field>
+                <input type="text" matInput placeholder="文章标题搜索">
+            </mat-form-field>
+        </form>
+        <nav class="nav">
+            <ul>
+                <li class="nav-item">
+                    <button mat-icon-button [color]="currentMode === 'bubble' ? 'accent' : 'primary'"
+                        (click)="navByMode('bubble')">
+                        <i class="fas fa-spinner"></i>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button mat-icon-button [color]="currentMode === 'grid' ? 'accent' : 'primary'"
+                        (click)="navByMode('grid')">
+                        <i class="fas fa-th"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
     <div class="content-wrapper">
         <router-outlet></router-outlet>
     </div>

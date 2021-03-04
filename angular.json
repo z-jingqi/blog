@@ -57,7 +57,7 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "src/styles/iconfont/iconfont.js"
+              "src/styles/fontawesome/js/all.min.js"
             ]
           },
           "configurations": {
