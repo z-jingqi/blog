@@ -1,15 +1,18 @@
 .home {
+    display: flex;
+    flex-direction: column;
     height: 100%;
+
+    .content-wrapper {
+        flex: 1;
+        overflow: hidden;
+    }
 
     .nav {
         ul {
             display: flex;
             align-items: center;
             justify-content: flex-end;
-        }
-
-        .nav-item {
-            color: aqua;
         }
     }
 }

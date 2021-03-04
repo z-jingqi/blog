@@ -1,0 +1,32 @@
+<mat-card>
+    <mat-card-header>
+        <div mat-card-avatar>
+            <ng-container *ngIf="article.author && article.author.avatar;else defaultAvatarTpl">
+                <img class="avatar" [src]="article.author.avatar">
+            </ng-container>
+            <ng-template #defaultAvatarTpl>
+                <i class="fas fa-grin-stars"></i>
+            </ng-template>
+        </div>
+        <mat-card-title>{{article.title}}</mat-card-title>
+        <mat-card-subtitle *ngIf="article.author">{{article.author.name}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+
+    </mat-card-content>
+    <mat-card-actions align="end">
+        <ng-container *ngIf="!isAddToList;else checkTpl">
+            <button mat-icon-button color="accent" matTooltip="加入阅读列表">
+                <i class="fas fa-plus"></i>
+            </button>
+        </ng-container>
+        <ng-template #checkTpl>
+            <button mat-icon-button [disabled]="true">
+                <i class="fas fa-check"></i>
+            </button>
+        </ng-template>
+        <button mat-icon-button color="primary" matTooltip="阅读">
+            <i class="fas fa-eye"></i>
+        </button>
+    </mat-card-actions>
+</mat-card>

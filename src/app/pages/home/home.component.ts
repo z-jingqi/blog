@@ -14,18 +14,28 @@ export class HomeComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.navToGrid();
+  }
 
   navByMode(mode: 'grid' | 'bubble'): void {
     switch (mode) {
       case 'bubble':
-        this.router.navigate(['home', 'article-bubble']);
+        this.navToBubble();
         break;
       case 'grid':
-        this.router.navigate(['home', 'article-grid']);
+        this.navToGrid();
         break;
     }
     this.currentMode = mode;
+  }
+
+  navToGrid(): void {
+    this.router.navigate(['home', 'article-grid']);
+  }
+
+  navToBubble(): void {
+    this.router.navigate(['home', 'article-bubble']);
   }
 
 }

@@ -1,1 +1,20 @@
-<p>article-grid works!</p>
+<ng-container *ngIf="articles$ | async as articles;else loadingTpl">
+    <ng-container *ngIf="articles && articles.length;else emptyTpl">
+        <div class="container">
+            <mat-grid-list cols="4" rowHeight="300px" gutterSize="16">
+                <mat-grid-tile *ngFor="let article of articles">
+                    <div class="article-card">
+                        <blog-article-card [article]="article"></blog-article-card>
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+    </ng-container>
+</ng-container>
+
+<ng-template #loadingTpl>
+    loading...
+</ng-template>
+<ng-template #emptyTpl>
+    没有数据
+</ng-template>
