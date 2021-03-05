@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Article } from 'src/app/model';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Article } from '@models/article';
 
 @Component({
   selector: 'blog-article-card',
@@ -8,11 +8,20 @@ import { Article } from 'src/app/model';
 })
 export class ArticleCardComponent implements OnInit {
 
-  @Input() article: Article = {} as Article;
   isAddToList = false;
+  @Input() article: Article = {} as Article;
+  @Output() read: EventEmitter<any> = new EventEmitter<any>();
+  @Output() addToList: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit(): void { }
 
+  readEvent(): void {
+    this.read.emit(this.article);
+  }
+
+  addToListEvent(): void {
+    this.addToList.emit(this.article);
+  }
 }

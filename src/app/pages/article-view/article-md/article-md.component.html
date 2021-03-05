@@ -1,0 +1,4 @@
+<ng-container *ngIf="article$ | async as article;else loadingTpl">
+    <blog-article-content [article]="article"></blog-article-content>
+</ng-container>
+<ng-template #loadingTpl></ng-template>

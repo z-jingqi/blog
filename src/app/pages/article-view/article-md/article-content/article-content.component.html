@@ -1,0 +1,4 @@
+<ng-container *ngIf="content$ | async as htmlStr;else loadingTpl">
+    <div [innerHTML]="htmlStr"></div>
+</ng-container>
+<ng-template #loadingTpl></ng-template>

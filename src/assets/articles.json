@@ -1,5 +1,6 @@
 [
     {
+        "id": "a-sun",
         "title": "《阳光普照》 | 春去春又来",
         "describle": "",
         "url": "./articles/A Sun/电影_阳光普照_春去春又来.md",
@@ -19,6 +20,7 @@
         }
     },
     {
+        "id": "a-touch-of-sin",
         "title": "《天注定》 | 罪与罚",
         "describle": "",
         "url": "./articles/A Touch Of Sin/电影_天注定_罪与罚.md",

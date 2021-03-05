@@ -4,7 +4,7 @@
             <mat-grid-list cols="4" rowHeight="300px" gutterSize="16">
                 <mat-grid-tile *ngFor="let article of articles">
                     <div class="article-card">
-                        <blog-article-card [article]="article"></blog-article-card>
+                        <blog-article-card [article]="article" (read)="read($event)"></blog-article-card>
                     </div>
                 </mat-grid-tile>
             </mat-grid-list>
