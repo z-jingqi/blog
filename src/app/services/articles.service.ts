@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { find } from 'rxjs/operators';
+import { find, map } from 'rxjs/operators';
 import { Article } from '@models/article';
 
 @Injectable({
@@ -21,7 +21,7 @@ export class ArticlesService {
   getArticleById(articleId: string): Observable<Article> {
     const url = './assets/articles.json';
     return this.http.get(url).pipe(
-      find((article) => (article as Article).id === articleId)
+      map(articles => (articles as Article[]).find(article => article.id === articleId))
     ) as Observable<Article>;
   }
 
