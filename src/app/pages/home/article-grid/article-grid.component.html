@@ -1,13 +1,9 @@
 <ng-container *ngIf="articles$ | async as articles;else loadingTpl">
     <ng-container *ngIf="articles && articles.length;else emptyTpl">
         <div class="container">
-            <mat-grid-list cols="4" rowHeight="300px" gutterSize="16">
-                <mat-grid-tile *ngFor="let article of articles">
-                    <div class="article-card">
-                        <blog-article-card [article]="article" (read)="read($event)"></blog-article-card>
-                    </div>
-                </mat-grid-tile>
-            </mat-grid-list>
+            <div class="article-card" *ngFor="let article of articles">
+                <blog-article-card [article]="article" (read)="read($event)"></blog-article-card>
+            </div>
         </div>
     </ng-container>
 </ng-container>

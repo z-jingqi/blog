@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Article } from '@models/article';
+import { ArticlesService } from '@services/articles.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'blog-home',
@@ -9,13 +12,16 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   currentMode: 'bubble' | 'grid' = 'bubble';
+  articles$!: Observable<Article[]>;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private articlesService: ArticlesService
   ) { }
 
   ngOnInit(): void {
     this.navToGrid();
+    this.getArticles();
   }
 
   navByMode(mode: 'grid' | 'bubble'): void {
@@ -36,6 +42,10 @@ export class HomeComponent implements OnInit {
 
   navToBubble(): void {
     this.router.navigate(['home', 'article-bubble']);
+  }
+
+  getArticles(): void {
+    this.articles$ = this.articlesService.getArticles();
   }
 
 }

@@ -7,9 +7,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, SearchBarComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
@@ -17,7 +19,8 @@ import { MatInputModule } from '@angular/material/input';
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatAutocompleteModule
   ]
 })
 export class HomeModule { }
