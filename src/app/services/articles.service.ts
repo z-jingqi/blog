@@ -14,12 +14,12 @@ export class ArticlesService {
   ) { }
 
   getArticles(): Observable<Article[]> {
-    const url = './assets/articles.json';
+    const url = './assets/data/articles.json';
     return this.http.get(url) as Observable<Article[]>;
   }
 
   getArticleById(articleId: string): Observable<Article> {
-    const url = './assets/articles.json';
+    const url = './assets/data/articles.json';
     return this.http.get(url).pipe(
       map(articles => (articles as Article[]).find(article => article.id === articleId))
     ) as Observable<Article>;
