@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticleViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private location: Location
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  locationBack(): void {
+    this.location.back();
   }
 
 }

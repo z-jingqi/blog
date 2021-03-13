@@ -1,0 +1,9 @@
+<mat-toolbar>
+    <div class="footer-item-wrapper">
+        <ng-container *ngFor="let media of socialMedias$ | async">
+            <div class="media-item">
+                <blog-footer-item [media]="media" (selectMedia)="selectMedia($event)"></blog-footer-item>
+            </div>
+        </ng-container>
+    </div>
+</mat-toolbar>

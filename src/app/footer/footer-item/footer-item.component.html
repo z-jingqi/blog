@@ -1,0 +1,12 @@
+<ng-container [ngSwitch]="media.type">
+    <ng-container *ngSwitchCase="'image'">
+        <div class="image-item">
+            <button mat-button (mouseenter)="onMouserEnter($event)" (mousemove)="onMouseMove($event)"
+                (mouseleave)="onMouseLeave($event)">{{media.name}}</button>
+            <img #mediaImg [ngClass]="{'show': isShow}" [src]="media.url">
+        </div>
+    </ng-container>
+    <ng-container *ngSwitchDefault>
+        <a mat-button [href]="media.url" target="_blank">{{media.name}}</a>
+    </ng-container>
+</ng-container>

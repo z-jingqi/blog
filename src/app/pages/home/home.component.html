@@ -1,7 +1,8 @@
 <div class="home">
     <section class="search-section">
         <blog-search-bar [articles]="articles$ | async"></blog-search-bar>
-        <!-- <nav class="nav">
+    </section>
+    <!-- <nav class="nav">
             <ul>
                 <li class="nav-item">
                     <button mat-icon-button [color]="currentMode === 'bubble' ? 'accent' : 'primary'"
@@ -17,7 +18,6 @@
                 </li>
             </ul>
         </nav> -->
-    </section>
     <section class="content-wrapper">
         <router-outlet></router-outlet>
     </section>
