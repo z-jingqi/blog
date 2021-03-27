@@ -1,26 +1,14 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    // background: radial-gradient(ellipse at bottom, #1C2837 0%, #050608 100%);
-    background-color: #f2f2f2;
-    height: calc(100% - 60px);
-    overflow: hidden;
-
-    .title {
-        color: #fff;
-    }
-
-    .content {
-        flex: 1;
-        overflow: hidden;
-    }
-
-    .icon-home {
-        color: #fff;
-        font-size: 20px;
-    }
+.video-bg {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
-.footer {
-    height: 60px;
+.content {
+    width: 100vw;
+    height: 100vh;
 }
