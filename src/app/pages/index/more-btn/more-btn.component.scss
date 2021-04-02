@@ -1,0 +1,7 @@
+.more-btn {
+    font-size: 25px;
+}
+
+::ng-deep .more-btn-tooltip {
+    background-color: var(--primary-color);
+}
