@@ -1,0 +1,13 @@
+<div class="articles-wrapper">
+    <div class="turn-btn prev-btn">
+        <i class="fas fa-"></i>
+    </div>
+    <ul class="articles-list">
+        <li class="article" *ngFor="let article of articles;let index=index">
+            <blog-article-card [article]="article"></blog-article-card>
+        </li>
+    </ul>
+    <div class="turn-btn next-btn">
+        <i class="fas fa-"></i>
+    </div>
+</div>

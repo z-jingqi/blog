@@ -1,5 +1,13 @@
 <div class="container">
     <blog-more-btn class="more-btn"></blog-more-btn>
+    <div class="content">
+        <section class="quote-wrapper" *ngIf="currentArticle && currentArticle.quote">
+            <blog-quote [quote]="currentArticle.quote" [quoteFrom]="currentArticle.quoteFrom"></blog-quote>
+        </section>
+        <section class="article-card-list">
+            <blog-article-card-wrapper [articles]="articles"></blog-article-card-wrapper>
+        </section>
+    </div>
     <div class="video-bg">
         <!-- <video #videoRef loop muted autoplay poster="assets/images/spirited-away-01.jpg"
             onloadedmetadata="this.muted = true" oncanplay="this.play()">

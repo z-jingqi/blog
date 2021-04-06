@@ -1,0 +1,23 @@
+.articles-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    ul,
+    li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .articles-list {
+        flex: 1;
+        overflow: hidden;
+    }
+
+    .turn-btn {
+        height: 100%;
+        min-width: 30px;
+        color: var(--primary-color)
+    }
+}

@@ -3,22 +3,24 @@ import { CommonModule } from '@angular/common';
 
 import { IndexRoutingModule } from './index-routing.module';
 import { IndexComponent } from './index.component';
-import { SectionComponent } from './section/section.component';
 import { MoreBtnComponent } from './more-btn/more-btn.component';
 import { MatButtonModule } from '@angular/material/button';
-import { MatTooltipModule } from '@angular/material/tooltip';
+import { QuoteComponent } from './quote/quote.component';
+import { ArticleCardComponent } from './article-card/article-card.component';
+import { ArticleCardWrapperComponent } from './article-card-wrapper/article-card-wrapper.component';
 
 @NgModule({
   declarations: [
     IndexComponent,
-    SectionComponent,
-    MoreBtnComponent
+    MoreBtnComponent,
+    QuoteComponent,
+    ArticleCardComponent,
+    ArticleCardWrapperComponent
   ],
   imports: [
     CommonModule,
     IndexRoutingModule,
-    MatButtonModule,
-    MatTooltipModule
+    MatButtonModule
   ]
 })
 export class IndexModule { }

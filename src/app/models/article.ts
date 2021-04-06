@@ -10,4 +10,6 @@ export interface Article {
     createDate: string | number;
     author: Author;
     tags?: Tag[];
+    quote?: string;
+    quoteFrom?: string;
 }

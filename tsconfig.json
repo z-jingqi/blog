@@ -14,6 +14,8 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
     "target": "es2015",
     "module": "es2020",
     "lib": [
@@ -23,6 +25,9 @@
     "paths": {
       "@models/*": [
         "src/app/models/*"
+      ],
+      "@special-models/*": [
+        "src/app/pages/special/models/*"
       ],
       "@services/*": [
         "src/app/services/*"

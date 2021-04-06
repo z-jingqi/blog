@@ -19,6 +19,7 @@
         left: 0;
         width: 100vw;
         height: 100vh;
+        z-index: -1;
 
         &::before {
             display: block;
@@ -31,5 +32,9 @@
             z-index: 1;
             background-color: rgba(0, 0, 0, 0.3);
         }
+    }
+
+    .content {
+        height: 100%;
     }
 }
