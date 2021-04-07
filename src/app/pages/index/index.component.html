@@ -5,7 +5,8 @@
             <blog-quote [quote]="currentArticle.quote" [quoteFrom]="currentArticle.quoteFrom"></blog-quote>
         </section>
         <section class="article-card-list">
-            <blog-article-card-wrapper [articles]="articles"></blog-article-card-wrapper>
+            <blog-article-card-wrapper [articles]="articles" (change)="articleChange($event)">
+            </blog-article-card-wrapper>
         </section>
     </div>
     <div class="video-bg">

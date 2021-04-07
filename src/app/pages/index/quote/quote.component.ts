@@ -7,8 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class QuoteComponent implements OnInit {
 
-  @Input() quote: string = '';
-  @Input() quoteFrom: string = '';
+  @Input() quote?: string = '';
+  @Input() quoteFrom?: string = '';
 
   constructor() { }
 

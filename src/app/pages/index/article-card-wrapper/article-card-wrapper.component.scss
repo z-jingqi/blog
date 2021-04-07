@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     position: relative;
+    padding: 0 16px;
 
     ul,
     li {
@@ -11,13 +12,20 @@
     }
 
     .articles-list {
+        display: flex;
+        align-items: center;
         flex: 1;
         overflow: hidden;
+        padding: 16px;
+
+        .article {
+            margin: 0 16px;
+            width: calc(33% - 32px);
+            flex-shrink: 0;
+        }
     }
 
     .turn-btn {
-        height: 100%;
-        min-width: 30px;
-        color: var(--primary-color)
+        font-size: 40px;
     }
 }

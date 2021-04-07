@@ -10,16 +10,31 @@ export class ArticleCardWrapperComponent implements OnInit {
 
   @Input() articles: Article[] = [];
   @Output() change: EventEmitter<Article> = new EventEmitter<Article>();
-  options = {
-    /**
-     * 页面展示个数
-     */
-    viewNum: 3
-  };
+
   currentIndex = 0;
 
   constructor() { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.articleIndexChange();
+  }
 
+  articleIndexChange() {
+    const article = this.articles[this.currentIndex];
+    this.change.emit(article);
+  }
+
+  prev() {
+    if (this.currentIndex > 0) {
+      this.currentIndex--;
+      this.articleIndexChange();
+    }
+  }
+
+  next() {
+    if (this.currentIndex < this.articles.length - 1) {
+      this.currentIndex++;
+      this.articleIndexChange();
+    }
+  }
 }

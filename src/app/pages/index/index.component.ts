@@ -10,12 +10,15 @@ import { Article } from '@models/article';
 export class IndexComponent implements OnInit {
 
   @ViewChild('videoRef') videoRef!: ElementRef<HTMLVideoElement>;
-  articles: Article[] = articlesData;
+  articles: Article[] = [...articlesData, ...articlesData, ...articlesData];
   currentArticle: Article = {} as Article;
 
   constructor() { }
 
   ngOnInit(): void { }
 
-  
+  articleChange(article: Article) {
+    this.currentArticle = article;
+  }
+
 }

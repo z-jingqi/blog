@@ -1,4 +1,4 @@
-<div class="article-card" (click)="readEvent()">
+<div class="article-card" (click)="readEvent()" [ngClass]="{'active': active}">
     <div class="card-img">
         <img class="cover" [src]="article.cover">
     </div>

@@ -6,6 +6,7 @@ img.avatar {
 .article-card {
     background-color: #fff;
     cursor: pointer;
+    transition-duration: 0.5s;
 
     .card-img {
         height: 160px;
@@ -40,6 +41,6 @@ img.avatar {
     }
 
     &.active {
-        box-shadow: 0 0.13em 3px 0.04em rgba(0, 0, 0, 0.12);
+        box-shadow: 0 0 0 1px var(--primary-color);
     }
 }
