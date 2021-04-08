@@ -1,18 +1,4 @@
 <div class="container">
-    <blog-more-btn class="more-btn"></blog-more-btn>
-    <div class="content">
-        <section class="quote-wrapper" *ngIf="currentArticle && currentArticle.quote">
-            <blog-quote [quote]="currentArticle.quote" [quoteFrom]="currentArticle.quoteFrom"></blog-quote>
-        </section>
-        <section class="article-card-list">
-            <blog-article-card-wrapper [articles]="articles" (change)="articleChange($event)">
-            </blog-article-card-wrapper>
-        </section>
-    </div>
-    <div class="video-bg">
-        <!-- <video #videoRef loop muted autoplay poster="assets/images/spirited-away-01.jpg"
-            onloadedmetadata="this.muted = true" oncanplay="this.play()">
-            <source src="assets/videos/Hiroshi_Nohara_memery.mp4" type="video/mp4">
-        </video> -->
-    </div>
+    <blog-video-background [src]="videoSrc" [quote]="quote"></blog-video-background>
+    <blog-start-reading></blog-start-reading>
 </div>

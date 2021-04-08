@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { FooterModule } from './footer/footer.module';
 
 @NgModule({
   declarations: [
@@ -18,8 +17,7 @@ import { FooterModule } from './footer/footer.module';
     BrowserAnimationsModule,
     MatToolbarModule,
     HttpClientModule,
-    MatButtonModule,
-    FooterModule
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

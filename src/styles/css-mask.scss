@@ -1,0 +1,50 @@
+.css-mask-01 {
+    mask: url('/assets/images/css-mask-01.png');
+    mask-size: 7100%, 100%;
+    animation: ani2 0.7s steps(70) forwards;
+
+    &:hover {
+        animation: ani 0.7s steps(70) forwards;
+    }
+}
+
+.css-mask-02 {
+    mask: url('/assets/images/css-mask-02.png');
+    mask-size: 3000%, 100%;
+    animation: ani2 0.7s steps(29) forwards;
+
+    &:hover {
+        animation: ani 0.7s steps(29) forwards;
+    }
+}
+
+.css-mask-03 {
+    mask: url('/assets/images/css-mask-03.png');
+    mask-size: 2300%, 100%;
+    animation: ani2 0.7s steps(22) forwards;
+
+    &:hover {
+        animation: ani 0.7s steps(22) forwards;
+    }
+}
+
+
+@keyframes ani {
+    from {
+        mask-position: 0 0;
+    }
+
+    to {
+        mask-position: 100% 0;
+    }
+}
+
+@keyframes ani2 {
+    from {
+        mask-position: 100% 0;
+    }
+
+    to {
+        mask-position: 0 0;
+    }
+}

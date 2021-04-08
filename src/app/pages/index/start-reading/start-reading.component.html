@@ -1,0 +1,7 @@
+<div class="start-reading" [ngClass]="{'unexpand': !expand}" #container (click)="expandContainer()">
+    <ng-container *ngIf="!animating">
+        <ng-container *ngIf="!expand">
+            <span class="txt">开始阅读</span>
+        </ng-container>
+    </ng-container>
+</div>

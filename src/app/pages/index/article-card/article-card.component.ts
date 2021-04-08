@@ -10,7 +10,6 @@ export class ArticleCardComponent implements OnInit {
 
   @Input() article: Article = {} as Article;
   @Output() read: EventEmitter<any> = new EventEmitter<any>();
-  @Input() active = false;
 
   constructor() { }
 
