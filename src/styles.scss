@@ -6,6 +6,10 @@
 @import './styles/css-mask.scss';
 @import './styles/scroll-bar.scss';
 
+* {
+    box-sizing: border-box;
+}
+
 html,
 body {
     height: 100%;
