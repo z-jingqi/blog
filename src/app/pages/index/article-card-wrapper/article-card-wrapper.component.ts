@@ -57,7 +57,9 @@ export class ArticleCardWrapperComponent implements OnInit, AfterViewInit {
       rotateY: {
         value: [45, 0]
       },
-      delay: (el, i) => i * 200
+      delay: (el, i) => i * 200,
+      easing: 'easeInOutSine',
+      duration: 1000
     });
   }
 }
