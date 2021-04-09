@@ -2,8 +2,6 @@ import { Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '
 import articlesData from '../../../assets/data/articles.json';
 import { Article } from '@models/article';
 import videos from '../../../assets/data/videos.json';
-import { fromEvent, Subscription } from 'rxjs';
-import { debounceTime, map } from 'rxjs/operators';
 
 @Component({
   selector: 'blog-index',
@@ -12,20 +10,20 @@ import { debounceTime, map } from 'rxjs/operators';
 })
 export class IndexComponent implements OnInit, OnDestroy {
 
+  @ViewChild('sectionContainer') sectionContainer!: ElementRef<HTMLDivElement>;
   articles: Article[] = [...articlesData, ...articlesData, ...articlesData];
   currentArticle: Article = {} as Article;
   quotes = ['电影改变了生活，但生活还是生活'];
   videoSrc = '';
   quote = '';
   expand = false;
-  @ViewChild('sectionContainer') sectionContainer!: ElementRef<HTMLDivElement>;
 
   constructor(
     private renderer: Renderer2
   ) { }
 
   ngOnInit(): void {
-    this.setVideoSrc();
+    // this.setVideoSrc();
     this.setQuote();
     this.mergeQuotes();
   }
@@ -48,6 +46,6 @@ export class IndexComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-   
+
   }
 }
