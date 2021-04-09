@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Article } from '@models/article';
+import articles from '../../../../assets/data/articles.json';
 
 @Component({
   selector: 'blog-article-card-wrapper',
@@ -8,9 +9,9 @@ import { Article } from '@models/article';
 })
 export class ArticleCardWrapperComponent implements OnInit {
 
-  @Input() articles: Article[] = [];
-  @Output() change: EventEmitter<Article> = new EventEmitter<Article>();
-
+  // @Output() change: EventEmitter<Article> = new EventEmitter<Article>();
+  @ViewChildren('articleWrapper') articleWrapper!: QueryList<ElementRef<HTMLDivElement>>;
+  @Input() articles: Article[] = articles;
   currentIndex = 0;
 
   constructor() { }
@@ -21,7 +22,7 @@ export class ArticleCardWrapperComponent implements OnInit {
 
   articleIndexChange() {
     const article = this.articles[this.currentIndex];
-    this.change.emit(article);
+    // this.change.emit(article);
   }
 
   prev() {

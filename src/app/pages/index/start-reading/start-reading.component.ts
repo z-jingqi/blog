@@ -8,9 +8,9 @@ import anime from 'animejs';
 })
 export class StartReadingComponent implements OnInit {
 
+  @ViewChild('container') container!: ElementRef<HTMLDivElement>;
   expand = false;
   animating = false;
-  @ViewChild('container') container!: ElementRef<HTMLDivElement>;
 
   constructor() { }
 

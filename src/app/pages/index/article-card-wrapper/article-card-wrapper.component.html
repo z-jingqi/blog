@@ -1,5 +1,7 @@
 <div class="articles-wrapper">
     <ng-container *ngFor="let article of articles">
-        <blog-article-card [article]="article"></blog-article-card>
+        <div class="article-wrapper" #articleWrapper>
+            <blog-article-card [article]="article"></blog-article-card>
+        </div>
     </ng-container>
 </div>
