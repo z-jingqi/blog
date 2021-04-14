@@ -24,13 +24,9 @@ export class StartReadingComponent implements OnInit {
     this.expand = true;
     anime({
       targets: this.container.nativeElement,
-      borderRadius: {
-        value: ['50%', 0],
-        duration: 200
-      },
       backgroundColor: {
-        value: '#ffd1c2',
-        duration: 200
+        value: '#ffffff',
+        duration: 2000
       },
       width: '100vw',
       height: '100vh'

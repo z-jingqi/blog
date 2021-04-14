@@ -1,16 +1,16 @@
 <div class="article-card" (click)="readEvent()">
     <div class="card-img">
-        <!-- <img class="cover" [src]="article.cover"> -->
+        <img class="cover" [src]="article.cover">
     </div>
     <div class="card-body">
         <p class="title">
-            <!-- <span>{{article.title}}</span> -->
+            <span>{{article.title}}</span>
         </p>
         <p class="describle" *ngIf="article.describle">
-            <!-- <span>{{article.describle}}</span> -->
+            <span>{{article.describle}}</span>
         </p>
         <p class="date" *ngIf="article.createDate">
-            <!-- <span>{{article.createDate | date: 'yyyy-MM-dd'}}</span> -->
+            <span>{{article.createDate | date: 'yyyy-MM-dd'}}</span>
         </p>
     </div>
 </div>
