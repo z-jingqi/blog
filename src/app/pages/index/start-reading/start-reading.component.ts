@@ -13,10 +13,14 @@ export class StartReadingComponent implements OnInit {
   expand = false;
   animating = false;
   burstObjs: any[] = [];
+  colors = ['#00FFFF', '#3399FF', '#CC00CC', '#FF0066', '#FF9966', '#FFFF33', '#33FF00', '#FFFFFF', '#66FF99'];
+  burst: any;
 
   constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.burst = this.createHoverEffect();
+  }
 
   expandContainer() {
     if (this.expand) {
@@ -35,4 +39,38 @@ export class StartReadingComponent implements OnInit {
       this.animating = false;
     });
   }
+
+  showHoverEffect() {
+    if (!this.expand && this.burst) {
+      const x = document.body.clientWidth / 2;
+      const y = document.body.clientHeight / 2;
+      this.burst.tune({ x, y })
+        .generate()
+        .replay();
+    }
+  }
+
+  createHoverEffect() {
+    const smoke = new mojs.Burst({
+      left: 0, top: 0,
+      degree: 0,
+      count: 3,
+      radius: { 0: 100 },
+      children: {
+        fill: this.colors,
+        pathScale: 'rand(0.5, 1)',
+        radius: 'rand(12, 15)',
+        swirlSize: 'rand(10, 15)',
+        swirlFrequency: 'rand(2, 4)',
+        direction: [1, -1],
+        duration: `rand(400, 800)`,
+        delay: 'rand(0, 75)',
+        easing: 'quad.out',
+        isSwirl: true,
+        isForce3d: true,
+      }
+    });
+    return smoke;
+  }
+
 }

@@ -11,14 +11,14 @@ export class AppComponent implements OnInit {
 
   // colors = ['#00FFFF', '#3399FF', '#CC00CC', '#FF0066', '#FF9966', '#FFFF33', '#33FF00', '#FFFFFF', '#66FF99'];
   colors = ['#ff6633'];
-  burstObjs: any[] = [];
+  burstObject: any;
 
   constructor(
     private router: Router
   ) { }
 
   ngOnInit() {
-    this.burstObjs = this.createEffectElements();
+    this.burstObject = this.createEffectElement();
     this.createClickEffect();
   }
 
@@ -32,50 +32,45 @@ export class AppComponent implements OnInit {
     }, false);
   }
 
-  createEffectElements() {
-    const burst = new mojs.Burst({
+  createEffectElement() {
+    const smoke = new mojs.Burst({
       left: 0, top: 0,
-      radius: { 0: 30 },
-      angle: 'rand(0, 360)',
-      children: {
-        shape: 'line',
-        stroke: this.colors,
-        fill: 'none',
-        scale: 1,
-        scaleX: { 1: 0 },
-        easing: 'cubic.out',
-        duration: 1000
-      }
-    });
-
-    const bubbles = new mojs.Burst({
-      left: 0, top: 0,
-      radius: 28,
+      degree: 0,
       count: 3,
-      timeline: { delay: 100 },
+      radius: { 0: 100 },
       children: {
-        stroke: this.colors,
-        fill: 'none',
-        scale: 1,
-        strokeWidth: { 8: 0 },
-        radius: { 0: 'rand(6, 10)' },
-        degreeShift: 'rand(-50, 50)',
-        duration: 400,
-        delay: 'rand(0, 250)',
+        fill: 'white',
+        pathScale: 'rand(0.5, 1)',
+        radius: 'rand(12, 15)',
+        swirlSize: 'rand(10, 15)',
+        swirlFrequency: 'rand(2, 4)',
+        direction: [1, -1],
+        duration: `rand(400, 800)`,
+        // delay: 'rand(0, 75)',
+        delay: (a: any, b: any, c: any) => {
+          console.log(a, b, c);
+        },
+        easing: 'quad.out',
+        isSwirl: true,
+        isForce3d: true,
       }
     });
-    return [burst, bubbles];
+    return smoke;
   }
 
   startAnimation(event: MouseEvent) {
-    for (const burst of this.burstObjs) {
-      const position = this.getPosition(event);
-      burst.tune(position)
-        .generate()
-        .replay();
-    }
+    const position = this.getPosition(event);
+    this.burstObject.tune(position)
+      .generate()
+      .replay();
   }
 
+  /**
+   * 获取鼠标点击的位置
+   *
+   * @params event 鼠标事件
+   * @returns 点击的坐标
+   */
   getPosition(event: MouseEvent): { x: number; y: number } {
     const x = event.pageX;
     const y = event.pageY;
