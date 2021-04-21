@@ -1,51 +1,26 @@
-import { Component, ElementRef, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import articlesData from '../../../assets/data/articles.json';
 import { Article } from '@models/article';
 import videos from '../../../assets/data/videos.json';
+import socials from '../../../assets/data/social-media.json';
+import { SocialMedia } from '@models/social-media';
 
 @Component({
   selector: 'blog-index',
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.scss']
 })
-export class IndexComponent implements OnInit, OnDestroy {
+export class IndexComponent implements OnInit {
 
-  @ViewChild('sectionContainer') sectionContainer!: ElementRef<HTMLDivElement>;
   articles: Article[] = [...articlesData, ...articlesData, ...articlesData];
-  currentArticle: Article = {} as Article;
-  quotes = ['电影改变了生活，但生活还是生活'];
-  videoSrc = '';
-  quote = '';
+  socialMedias: SocialMedia[] = socials;
   expand = false;
 
-  constructor(
-    private renderer: Renderer2
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
-    // this.setVideoSrc();
-    this.setQuote();
-    this.mergeQuotes();
-  }
-
-  mergeQuotes() {
-    const articlesQuotes: string[] = this.articles.filter(article => article.quote).map(article => article.quote) as string[];
-    this.quotes = this.quotes.concat(articlesQuotes);
-  }
-
-  setVideoSrc() {
-    const length = (videos as string[]).length;
-    const index = Math.floor(Math.random() * length);
-    this.videoSrc = (videos as string[])[index];
-  }
-
-  setQuote() {
-    const length = this.quotes.length;
-    const index = Math.floor(Math.random() * length);
-    this.quote = this.quotes[index];
-  }
-
-  ngOnDestroy() {
 
   }
+
+
 }

@@ -1,18 +1,77 @@
-.container {
+.header {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    color: #fff;
     position: absolute;
+    width: 100vw;
+    z-index: 1;
     top: 0;
-    left: 0;
+
+    .title {
+        font-family: 'fangsong', 'kaiti', 'microsoft yahei', 'PingFang SC';
+        color: var(--primary-color);
+    }
+
+    .spacer {
+        flex: 1;
+    }
+
+    .media-container {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        color: #fff;
+        flex-shrink: 0;
+
+        .media-icon {
+            margin-left: 10px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+
+        .media-wrapper {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            text-align: center;
+            cursor: pointer;
+            transition-duration: 0.5s;
+            position: relative;
+
+            .tooltip {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                opacity: 0;
+                padding: 2px 3px;
+                transition-duration: 0.5s;
+                font-size: 12px;
+                white-space: nowrap;
+            }
+
+            &:hover {
+                color: var(--primary-color);
+
+                .tooltip {
+                    top: -16px;
+                    opacity: 1;
+                }
+            }
+
+            .iconfont {
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+.content {
+    position: absolute;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    transition-duration: 0.2s;
-
-    .section {
-        width: 100vw;
-        height: 100vh;
-    }
-
-    .section-video {
-        background-color: #f5f5f5;
-    }
 }

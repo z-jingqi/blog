@@ -1,31 +1,38 @@
 [
     {
-        "name": "豆瓣",
-        "url": "https://www.douban.com/people/75615762"
+        "name": "微信公众号",
+        "url": "assets/images/offical-account-qrcode.jpg",
+        "type": "image",
+        "icon": "icon-wx"
     },
     {
-        "name": "简书",
-        "url": "https://www.douban.com/people/75615762"
+        "name": "豆瓣",
+        "url": "https://www.douban.com/people/75615762",
+        "icon": "icon-douban"
     },
     {
         "name": "知乎",
-        "url": "https://www.douban.com/people/75615762"
-    },
-    {
-        "name": "微信公众号",
-        "url": "assets/images/offical-account-qrcode.jpg",
-        "type": "image"
+        "url": "https://www.douban.com/people/75615762",
+        "icon": "icon-zhihu"
     },
     {
         "name": "bilibili",
-        "url": ""
+        "url": "",
+        "icon": "icon-bilibili"
+    },
+    {
+        "name": "简书",
+        "url": "https://www.douban.com/people/75615762",
+        "icon": "icon-jianshu"
     },
     {
         "name": "medium",
-        "url": ""
+        "url": "",
+        "icon": "icon-medium"
     },
     {
         "name": "blogger",
-        "url": ""
+        "url": "",
+        "icon": "icon-blogger"
     }
 ]

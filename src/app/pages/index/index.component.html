@@ -1,4 +1,15 @@
-<div class="container">
-    <blog-video-background [src]="videoSrc" [quote]="quote"></blog-video-background>
-    <blog-start-reading></blog-start-reading>
+<header class="header">
+    <span class="title">落花水面皆文章</span>
+    <span class="spacer"></span>
+    <ul class="media-container">
+        <li class="media-icon" *ngFor="let media of socialMedias">
+            <p class="media-wrapper">
+                <i class="iconfont" [ngClass]="media.icon"></i>
+                <span class="tooltip">{{media.name}}</span>
+            </p>
+        </li>
+    </ul>
+</header>
+<div class="content">
+    <video></video>
 </div>

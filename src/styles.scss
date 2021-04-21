@@ -1,10 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-@import './styles/theme.scss';
+@import './styles//color-variables.scss';
 @import './styles/fontawesome/scss/fontawesome.scss';
 @import './styles/md-themes/apollo.scss';
 // @import './styles/md-themes/sspai.scss';
 @import './styles/css-mask.scss';
 @import './styles/scroll-bar.scss';
+@import './styles/icon-font/iconfont.css';
 
 * {
     box-sizing: border-box;
