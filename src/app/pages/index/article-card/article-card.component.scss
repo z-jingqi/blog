@@ -6,6 +6,7 @@
 
     .card-img {
         overflow: hidden;
+        height: 300px;
 
         .cover {
             width: 100%;
@@ -14,16 +15,17 @@
     }
 
     .card-body {
-        padding: 10px;
+        padding: 10px 0;
 
         .title {
-            font-size: 16px;
+            font-size: 20px;
             color: #0f0f0f;
             margin-bottom: 5px;
+            margin-top: 0;
         }
 
         .describle {
-            font-size: 14px;
+            font-size: 16px;
             color: #ccc;
             margin: 0;
         }

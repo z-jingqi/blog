@@ -12,7 +12,7 @@ export class ArticleCardWrapperComponent implements OnInit, AfterViewInit {
 
   // @Output() change: EventEmitter<Article> = new EventEmitter<Article>();
   @ViewChildren('articleWrapper') articleWrapper!: QueryList<ElementRef<HTMLDivElement>>;
-  @Input() articles: Article[] = [...articles, ...articles, ...articles, ...articles, ...articles];
+  @Input() articles: Article[] = articles;
   currentIndex = 0;
 
   constructor() { }
@@ -45,7 +45,7 @@ export class ArticleCardWrapperComponent implements OnInit, AfterViewInit {
   }
 
   displayAnimation() {
-    const targets = this.articleWrapper.map(wrapper => wrapper.nativeElement);
+    const targets = this.articleWrapper.map((wrapper: { nativeElement: any }) => wrapper.nativeElement);
     anime({
       targets,
       opacity: {

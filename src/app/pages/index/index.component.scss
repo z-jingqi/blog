@@ -5,12 +5,16 @@
     color: #fff;
     position: absolute;
     width: 100vw;
-    z-index: 1;
+    z-index: 10;
     top: 0;
+    height: 65px;
+    box-sizing: border-box;
 
     .title {
-        font-family: 'fangsong', 'kaiti', 'microsoft yahei', 'PingFang SC';
+        font-size: 25px;
+        font-weight: 700;
         color: var(--primary-color);
+        cursor: pointer;
     }
 
     .spacer {
@@ -23,9 +27,10 @@
         list-style: none;
         color: #fff;
         flex-shrink: 0;
+        margin-right: 50px;
 
         .media-icon {
-            margin-left: 10px;
+            margin-left: 20px;
 
             &:first-child {
                 margin-left: 0;
@@ -49,7 +54,7 @@
                 opacity: 0;
                 padding: 2px 3px;
                 transition-duration: 0.5s;
-                font-size: 12px;
+                font-size: 14px;
                 white-space: nowrap;
             }
 
@@ -74,4 +79,58 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+
+    .wrapper {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .quote {
+            font-size: 40px;
+            color: #fff;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .start-btn {
+            border: none;
+            outline: none;
+            color: var(--primary-color);
+            transition-duration: 0.5s;
+            background: none;
+            font-size: 30px;
+            font-family: 'kaiti';
+            cursor: pointer;
+
+            &:hover {
+                text-shadow: 0px 0px 15px var(--primary-color);
+            }
+        }
+    }
+
+    .video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.article-content {
+    background-color: var(--accent-sub-color);
+}
+
+.article-container {
+    position: absolute;
+    top: 65px;
+    bottom: 65px;
+    width: 50vw;
+    min-width: 1200px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: auto;
 }

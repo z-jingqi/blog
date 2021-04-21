@@ -1,5 +1,5 @@
 <header class="header">
-    <span class="title">落花水面皆文章</span>
+    <span class="title" (click)="toggleReading(false)">落花水面皆文章</span>
     <span class="spacer"></span>
     <ul class="media-container">
         <li class="media-icon" *ngFor="let media of socialMedias">
@@ -10,6 +10,19 @@
         </li>
     </ul>
 </header>
-<div class="content">
-    <video></video>
+<div class="content" [ngClass]="{'article-content': isReading}">
+    <ng-container *ngIf="!isReading;else articles">
+        <div class="wrapper">
+            <p class="quote">电影改变了生活，但生活还是生活</p>
+            <button class="start-btn" (click)="toggleReading()">开始</button>
+        </div>
+        <video class="video" loop muted loop oncanplay="this.play()" onloadedmetadata="this.muted = true">
+            <source [src]="videoUrl" type="video/mp4">
+        </video>
+    </ng-container>
 </div>
+<ng-template #articles>
+    <div class="article-container">
+        <blog-article-card-wrapper></blog-article-card-wrapper>
+    </div>
+</ng-template>
