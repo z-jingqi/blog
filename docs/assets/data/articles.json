@@ -6,6 +6,8 @@
         "url": "./assets/articles/a_sun/电影_阳光普照_春去春又来.md",
         "cover": "./assets/articles/a_sun/cover.jpg",
         "createDate": "",
+        "quote": "There is a crack in everything, that's how the light gets in.",
+        "quoteFrom": "Leonard Cohen",
         "tags": [
             {
                 "name": "电影"
