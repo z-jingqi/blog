@@ -17,7 +17,8 @@
             <button class="start-btn" (click)="toggleReading()">开始</button>
         </div>
         <video class="video" loop muted loop oncanplay="this.play()" onloadedmetadata="this.muted = true">
-            <source [src]="videoUrl" type="video/mp4">
+            <!-- <source [src]="videoUrl" type="video/mp4"> -->
+            <source src="/assets/videos/only_yesterday_02.mp4">
         </video>
     </ng-container>
 </div>
