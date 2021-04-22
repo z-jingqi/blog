@@ -3,8 +3,8 @@ import articlesData from '../../../assets/data/articles.json';
 import { Article } from '@models/article';
 import videos from '../../../assets/data/videos.json';
 import socials from '../../../assets/data/social-media.json';
+import posters from '../../../assets/data/posters.json';
 import { SocialMedia } from '@models/social-media';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'blog-index',
@@ -17,6 +17,7 @@ export class IndexComponent implements OnInit {
   socialMedias: SocialMedia[] = socials;
   expand = false;
   videoUrl = videos[0];
+  poster = posters[0];
   isReading = false;
 
   constructor() { }
@@ -26,10 +27,15 @@ export class IndexComponent implements OnInit {
   }
 
   setVideoUrl() {
-    const length = videos.length;
+    this.videoUrl = this.getRandItem(videos);
+    this.poster = this.getRandItem(posters);
+  }
+
+  getRandItem(items: string[]) {
+    const length = items.length;
     const indexRand = Math.random() * length;
     const index = Math.floor(indexRand);
-    this.videoUrl = videos[index];
+    return items[index];
   }
 
   toggleReading(value?: boolean) {
